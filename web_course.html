@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>coba</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 35px;
+            padding-top: 10px;
+            font-family: sans-serif;
+            background: linear-gradient(to right,rgb(16, 221, 221), violet);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 25px;
+            font-family: Geneva;
+            color: black;
+            text-align: left;
+            border-bottom: 5px solid black;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-family: serif;
+            color: black;
+            text-align: left;
+            padding-bottom: 2px;
+        }
+
+        h4 {
+            font-size: 30px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            color:black;
+            text-align: center;
+        }
+
+        h5 {
+            font-size: 20px;
+            font-family: 'serif';
+            color: black;
+            margin: 0;
+            text-align:left;
+            margin-left:15%;
+            margin-top: 5%;
+        }
+        
+        .container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .kotak {
+            width: 350px;
+            height: 300px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: black;
+            position: relative;
+        }
+
+        .kotak2, .kotak3, .kotak4, .kotak5 {
+            width: 308px;
+            height: 65px;
+            border: 2px solid black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+
+        .kotak2 { background-color: rgb(238, 132, 132); }
+        .kotak3 { background-color: rgb(245, 243, 116); }
+        .kotak4 { background-color: rgb(131, 255, 162); }
+        .kotak5 { background-color: rgb(30, 218, 231); }
+
+        .kotak6 {
+            width: 288px;
+            height: 190px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: white;
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+            padding: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+        }
+        .text {
+            font-size: 15px;
+            font-family: serif;
+            margin: 0;
+            color: black;
+            line-height: 1.4;;
+            text-align:justify;
+            padding: 45px;
+            position: absolute;
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>GeeksforGeeks</b></h1>
+    <h2>A Computer Science Portal for Geeks</h2>
+    <h3>Portofolio</h3>
+    <div class="container">
+        <div class="kotak">
+            <div class="kotak2"><h4><b>HTML</b></h4></div>
+            <div class="kotak6">
+                <h5>HTML Tutorial</h5>
+                <p class="text">HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup...</p>
+            </div>
+        </div>
+        <div class="kotak">
+            <div class="kotak3"><h4><b>CSS</b></h4></div>
+            <div class="kotak6">
+                <h5>CSS Tutorial</h5>
+                <p class="text">Cascading Style Sheets, fondly referred to as CSS, is a simply designed language intended to simplify the process of making web pages presentable...</p>
+            </div>
+        </div>
+        <div class="kotak">
+            <div class="kotak4"><h4><b>PHP</b></h4></div>
+            <div class="kotak6">
+                <h5>PHP Tutorial</h5>
+                <p class="text">The term PHP is an acronym for PHP: Hypertext Preprocessor. PHP is a widely-used open-source scripting language especially suited for web development...</p>
+            </div>
+        </div>
+        <div class="kotak">
+            <div class="kotak5"><h4><b>JAVASCRIPT</b></h4></div>
+            <div class="kotak6">
+                <h5>JavaScript Tutorial</h5>
+                <p class="text">JavaScript was developed by Brendan Eich in 1995. It was initially called LiveScript but was later renamed to JavaScript. JavaScript is the essence of...</p>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
