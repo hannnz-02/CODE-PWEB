@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cek Kode Pos </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      width: 400px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"] {
+      text-align: center ;
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+     
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #007d89;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #045f69;
+    }
+
+    #hasil {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Cek Kode Pos </h2>
+
+  <form onsubmit="return cariKodePos()">
+    <input type="text" id="provinsi" placeholder=" -- Provinsi --">
+    <input type="text" id="kota" placeholder=" -- Kota/Kabupaten --">
+    <input type="text" id="kecamatan" placeholder=" -- kecamatan --">
+    <br>
+    <input type="submit" value="Cari">
+  </form>
+
+  <div id="hasil"></div>
+</div>
+
+<script>
+  const dataKodePos = {
+    "jawa timur": {
+      "surabaya": {
+        "sukolilo": "60111",
+        "dukuh pakis": "60225"
+      },
+      "malang": {
+        "klojen": "65111",
+        "sukun": "65147"
+      }
+    },
+    "jakarta": {
+      "jakarta pusat": {
+        "menteng": "10310",
+        "gambir": "10110"
+      }
+    }
+  };
+
+  function cariKodePos() {
+    const prov = document.getElementById("provinsi").value.toLowerCase().trim();
+    const kota = document.getElementById("kota").value.toLowerCase().trim();
+    const kec = document.getElementById("kecamatan").value.toLowerCase().trim();
+    const hasil = document.getElementById("hasil");
+
+    if (!prov || !kota || !kec) {
+      hasil.style.color = "red";
+      hasil.innerHTML = "❗ Harap isi semua kolom (provinsi, kota, kecamatan).";
+      return false;
+    }
+
+    const kodePos = dataKodePos?.[prov]?.[kota]?.[kec];
+
+    if (kodePos) {
+      hasil.style.color = "green";
+      hasil.innerHTML = `✅ Kode Pos untuk <strong>${kec}, ${kota}, ${prov.toUpperCase()}</strong> adalah <strong>${kodePos}</strong>`;
+    } else {
+      hasil.style.color = "red";
+      hasil.innerHTML = "❌ Data tidak ditemukan. Coba cek ejaan provinsi/kota/kecamatan.";
+    }
+    return false; 
+  }
+</script>
+
+</body>
+</html>

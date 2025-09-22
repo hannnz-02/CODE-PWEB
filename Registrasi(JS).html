@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrasi</title>
+    <style>
+        body {
+            background-color: rgb(3, 97, 92);
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 35px;
+            color: black;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .kotak {
+            width: 400px;
+            height: 550px;
+            border: 2px solid rgb(250, 248, 248);
+            border-radius: 10px;
+            background-color: rgb(224, 247, 250);
+            position: relative;
+            margin: 100px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 75%;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 35px;
+            padding: 10px 25px;
+            background-color: #045f69;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007d89;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var nama = document.forms["formRegistrasi"]["nama"].value;
+            var nrp = document.forms["formRegistrasi"]["nrp"].value;
+            var matkul = document.forms["formRegistrasi"]["matkul"].value;
+            var dosen = document.forms["formRegistrasi"]["dosen"].value;
+
+            if (nama === "" || nrp === "" || matkul === "" || dosen === "") {
+                alert("Semua kolom harus diisi!");
+                return false;
+            }
+
+            return true; 
+        }
+    </script>
+</head>
+<body>
+    <div class="kotak">
+        <h1>REGISTRASI</h1>
+        <form name="formRegistrasi" onsubmit="return validateForm()">
+            <label>Nama:</label>
+            <input type="text" name="nama">
+            <label>NRP:</label>
+            <input type="text" name="nrp">
+            <label>Mata Kuliah:</label>
+            <input type="text" name="matkul">
+            <label>Dosen:</label>
+            <input type="text" name="dosen">
+            <input type="submit" value="Kirim">
+        </form>
+    </div>
+</body>
+</html>

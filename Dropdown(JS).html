@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drop Down</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f1e7e7;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        form {
+            display: inline-block;
+            width: 300px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select, input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Drop Down</h1>
+
+    <form>
+        <label for="alat">Alat Elektronik:</label><br>
+        <select name="alat" id="alat" onchange="updatemerk()">
+            <option value="">-- Pilih --</option>
+            <option value="Laptop">Laptop</option>
+            <option value="HP">HP</option>
+            <option value="Speaker">Speaker</option>
+            <option value="Earphone">Earphone</option>
+            <option value="Keyboard">Keyboard</option>
+        </select>
+        <br><br>
+
+        <label for="merk">Merk:</label><br>
+        <select name="merk" id="merk">
+            <option value="">-- Pilih Merk --</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Kirim" name="t1">
+    </form>
+    <script>
+        const merk = {
+            Laptop: ["Asus", "Acer", "Lenovo", "HP", "Samsung", "Dell", "Apple", "MSI", "Microsoft"],
+            HP: ["Samsung", "VIVO", "OPPO", "Xiaomi", "Redmi", "Nokia", "Realmi", "Infinix"],
+            Speaker: ["Baseus", "Sonos", "Bose", "JBL", "Sony", "Anker", "Amazon", "Google"],
+            Earphone: ["JETE", "Sony", "Samsung", "Logitech", "Philips"],
+            Keyboard: ["Logitech", "Fantech", "Keychron", "Ducky", "Razer"]
+        };
+
+        function updatemerk() {
+            const alatSelect = document.getElementById("alat");
+            const merkSelect = document.getElementById("merk");
+            const selectedAlat = alatSelect.value;
+            merkSelect.innerHTML = "<option value=''>-- Pilih Merk --</option>";
+            if (merk[selectedAlat]) {
+                merk[selectedAlat].forEach(function(namaMerk) {
+                    const option = document.createElement("option");
+                    option.value = namaMerk.toLowerCase();
+                    option.text = namaMerk;
+                    merkSelect.appendChild(option);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
